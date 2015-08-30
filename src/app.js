@@ -1,33 +1,51 @@
-
-import Marker from './Marker';
+import React from './lib/react/react';
+// import Marker from './Marker';
 import Soundsystem from './Soundsystem';
 import Station from './Station';
 
+/**
+ *  Make some instances of the Soundsystem object 
+ *  and hold them in an array
+ */
+let soundsystems = (function() {
+	let data = [
+		{
+			className : "soundsystem", 
+			name : "4 Play",
+			description : "House, garage, R&B, hip hop, bashment, reggae",
+			position : [ 1 , 1 ]
+		},
+		{
+			className : "soundsystem", 
+			name : "Aba-shan-ti",
+			description : "Roots, reggae, dub",
+			position : [ 1 , 1 ]
+		},
+		{
+			className : "soundsystem", 
+			name : "Arts A Light",
+			description : "R&B, reggae, hip hop, classic garage",
+			position : [ 1 , 1 ]
+		}
+	];
 
-var marker01 = new Marker(
-	{
-		'className' : 'className', 
-		'position': [
-			'20', '40'
-		]
+	let list = [];
+
+	for (let i = 0; i < data.length; i++) {
+		list.push( new Soundsystem({ 'className': data[i].className, 'position': data[i].position, 'name': data[i].name, 'description': data[i].description }) );
 	}
+
+	return list;
+
+})();
+
+console.log(soundsystems[2].showInfo());
+console.log(soundsystems);
+
+React.render(
+  React.createElement('h1', null, 'Hello, world!'),
+  document.getElementById('map')
 );
-console.log(marker01);
-
-var soundsystem01 = new Soundsystem(
-	{
-		'className' : 'className', 
-		'position': [
-			'20', '40'
-		], 
-		'name': 'Aba-shanti-ti', 
-		'description': 'reggae, dub, roots'
-	}
-);
-console.log(soundsystem01);
-console.log(soundsystem01.showInfo());
-
-
 
 
 // var TFLStatuses = (function() {
@@ -47,52 +65,6 @@ console.log(soundsystem01.showInfo());
 // 	return data;
 
 // })();
-
-
-
-// /**
-//  *  Make some instances of the Soundsystem object 
-//  *  and hold them in an array
-//  */
-// var soundsystems = (function() {
-// 	var data = [
-// 		{
-// 			type : "soundsystem", 
-// 			name : "4 Play",
-// 			description : "House, garage, R&B, hip hop, bashment, reggae",
-// 			position : [ 1 , 1 ]
-// 		},
-// 		{
-// 			type : "soundsystem", 
-// 			name : "Aba-shan-ti",
-// 			description : "Roots, reggae, dub",
-// 			position : [ 1 , 1 ]
-// 		},
-// 		{
-// 			type : "soundsystem", 
-// 			name : "Arts A Light",
-// 			description : "R&B, reggae, hip hop, classic garage",
-// 			position : [ 1 , 1 ]
-// 		}
-// 	];
-
-// 	var list = [];
-
-// 	for (let i = 0; i < data.length; i++) {
-// 		list.push( new Soundsystem({ 'type': data[i].type, 'position': data[i].position, 'name': data[i].name, 'description': data[i].description }) );
-// 	}
-
-// 	return list;
-
-// })();
-
-
-
-// // var soundsystem01 = new Soundsystem({ 'type': 'soundsystem', 'position': [ 10.55, 20.44 ], 'name': 'Aba-shanti-i', 'description': 'reggae, dub' });
-
-// // var station01 = new Station({ 'type': 'station', 'position': [ 10.55, 20.44 ], 'name': 'Westbourne Park' });
-
-// // var toilet01 = new Marker({ 'type': 'toilet', 'position': [ 10.55, 20.44 ] });
 
 
 

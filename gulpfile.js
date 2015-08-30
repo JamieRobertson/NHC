@@ -9,9 +9,12 @@ var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babel = require('babelify');
+var reactify = require('reactify');
+
+
 
 function compile(watch) {
-  var bundler = watchify(browserify('./src/app.js', { debug: true }).transform(babel));
+  var bundler = watchify(browserify('./src/app.js', { debug: true }).transform( babel ));  //[ ... , reactify]
 
   function rebundle() {
     bundler.bundle()
@@ -23,6 +26,11 @@ function compile(watch) {
       .pipe(gulp.dest('./dist'));
   }
 
+  function copyHTML() {
+    gulp.src('./src/index.html')
+      .pipe(gulp.dest('./dist'));
+  }
+
   if (watch) {
     bundler.on('update', function() {
       console.log('-> bundling...');
@@ -31,7 +39,8 @@ function compile(watch) {
   }
 
   rebundle();
-}
+  copyHTML();
+};
 
 function watch() {
   return compile(true);

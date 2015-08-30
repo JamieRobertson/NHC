@@ -13,14 +13,14 @@ export default class Marker {
 		this.left = options.position[0];
 		this.top = options.position[1];
 	}
-	render() {
-		var htmlString = '<li class="'+ this.className +'"><a href="#">';
-		if (this.name) {
-			htmlString += this.name
-		}
-		htmlString += '</a></li>';
-		return htmlString;
-	}
+	// render() {
+	// 	var htmlString = '<li class="'+ this.className +'"><a href="#">';
+	// 	if (this.name) {
+	// 		htmlString += this.name
+	// 	}
+	// 	htmlString += '</a></li>';
+	// 	return htmlString;
+	// }
 	moveTo() {
 
 	}
