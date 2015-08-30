@@ -1,6 +1,6 @@
 
-nhc 15 - a simple app
-=====================
+Notting Hill Carnival app
+=========================
 
 ### about 
 
@@ -38,6 +38,8 @@ as much plain JavaScript as possible.
 
 ### for this I need:
 
-- Easily update the dom.		react
+- Easily update the dom			react
 
-- A server. 					node
+- A server	 					node
+
+- Dev tools						gulp + browserify (+ a wee bit more)
