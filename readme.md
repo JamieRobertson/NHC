@@ -10,9 +10,18 @@ status at the Notting Hill Carnival.
 I'm trying to make this in a really simple way, using 
 as much plain JavaScript as possible.
 
+I'm also using this project to learn more about React, 
+and OO Javascript.
 
 
-### stages
+
+### prerequisites:
+
+- Node, npm, gulp all node modules specified in gulpfile
+
+
+
+### stages of development:
 
 - render lots of markers
 
@@ -38,8 +47,17 @@ as much plain JavaScript as possible.
 
 ### for this I need:
 
-- Easily update the dom			react
+- React: 
+  To easily update the dom
 
-- A server	 					node
+- Node: 
+  To serve data about the markers + tube status
 
-- Dev tools						gulp + browserify (+ a wee bit more)
+- Gulp + Browserify: 
+  So that I can use es6 syntax 
+
+
+
+### contact:
+
+@JamieRudeboyson
